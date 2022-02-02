@@ -8,7 +8,8 @@
 
 body {
   height: 100vh;
-  background-color: grey;
+
+background-image: linear-gradient(315deg, #36096d 0%, #37d5d6 74%);
   font-family: "Andika New Basic", sans-serif;
   perspective: 1500px;
 }
