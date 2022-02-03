@@ -204,15 +204,7 @@ header {
   transform: translateY(-55%) scale(1.1);
 }
 
-.right--arrow {
-  width: 12px;
-  transform: translateY(1px) scale(0, 1);
-  transition: transform 150ms ease-in-out;
-}
 
-.subMenu--item:hover .right--arrow {
-  transform: translateY(1.75px) scale(1);
-}
 
 .subMenu--item:hover .label--desc {
   color: black;
@@ -282,9 +274,6 @@ a {
   text-decoration: none;
   display: block;
   color: rgb(0, 0, 73);
-}
-a:hover {
-  text-decoration: underline dotted;
 }
 
 

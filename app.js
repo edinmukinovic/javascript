@@ -1,3 +1,4 @@
+/// Kontrolisanje kretanja pointera, da li je pointer došao na mjesto DIVa. Ako je pointrer došao na mjesto DIVa onda prikaže new--expand i first class.
 const handleMouseEnter = (e) => {
   if (!e.target.dataset.expand) {
     return;
@@ -24,10 +25,14 @@ const handleMouseEnter = (e) => {
     }
   });
 
+
+
+/// Računa širinu prikaza
   const navLinkCenter = Math.floor(
     e.target.offsetLeft + e.target.clientWidth / 2
   );
 
+/// Pokreće animaciju za link 
   indicator.style.transform = `translateX(${navLinkCenter}px)`;
   indicator.style.opacity = "1";
 
@@ -46,6 +51,9 @@ const handleMouseEnter = (e) => {
     prevMenu.classList.add("prev");
   }
 
+
+
+// Prikaz aktivnog linka 
   menus.forEach((menu) => {
     if (menu.id === targetMenu.id) {
       menu.classList.add("active");
@@ -57,6 +65,10 @@ const handleMouseEnter = (e) => {
   expandMenu.classList.add("expand");
 };
 
+
+
+
+///Provjerava da li je pointer napustio mjesto DIVa, ako jeste onda pokreće forceInitialState();
 const handleMouseLeave = (e) => {
   if (isMouseOnMenu || e.y > 50) {
     return;
@@ -65,6 +77,8 @@ const handleMouseLeave = (e) => {
   forceInitialState();
 };
 
+
+/// Definiše forceInitialState(), sve vraća na početno stanje i sakriva menu.
 const forceInitialState = () => {
   expandMenu.classList.remove("expand", "active");
   currentNav.classList.remove("hover");
@@ -74,6 +88,8 @@ const forceInitialState = () => {
   navsVisited = 0;
 };
 
+
+//
 const expandMenu = document.querySelector(".header__expandMenu");
 const menus = expandMenu.querySelectorAll(".menu__container > *");
 const navLinks = document.querySelectorAll(".nav--link");
@@ -87,37 +103,20 @@ const {
   width: menuWidth,
 } = expandMenu.getBoundingClientRect();
 
+//Prati da li je na neki link prikazan pointer, ako jeste onda pokreće handleMouseEnter
 navLinks.forEach((navLink) => {
   navLink.addEventListener("mouseenter", handleMouseEnter);
 });
 
-expandMenu.addEventListener("mouseenter", () => {
-  if (expandMenu.style.opacity === "1") {
-    isMouseOnMenu = true;
-  }
-});
-
-expandMenu.addEventListener("mouseleave", (e) => {
-  if (e.y > 70) {
-    isMouseOnMenu = false;
-    forceInitialState();
-  }
-});
-
-document
-  .querySelector(".nav__links")
-  .addEventListener("mouseleave", handleMouseLeave);
 
 
 
 
 
 
-  
 
 
-
-  
+///Funkcija za prikaz Toasta
 
   function edinToast(x) {
     var el = document.createElement("div");    
