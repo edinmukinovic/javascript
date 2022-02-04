@@ -50,12 +50,7 @@ header {
   cursor: pointer;
 }
 
-.arrow {
-  width: 20px;
-  height: 10px;
-  position: relative;
-  transform: translateX(-4px);
-}
+
 
 .line {
   position: absolute;
@@ -67,23 +62,9 @@ header {
   transform-origin: 100% 50%;
 }
 
-.arrow--sideUp {
-  transform: rotate(45deg);
-}
 
-.arrow--sideDown {
-  transform: rotate(-45deg);
-}
 
-.arrow--hoverLine {
-  width: 12px;
-  transform: scale(0);
-}
 
-.arrow,
-.line {
-  transition: transform 100ms ease-in;
-}
 
 .btn--primary:hover {
   background-color: #ffffff65;
